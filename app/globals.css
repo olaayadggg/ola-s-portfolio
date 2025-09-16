@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+  --brand-gradient: linear-gradient(135deg, #a855f7, #06b6d4, #ec4899);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-[#0f0c29] dark:via-[#302b63] dark:to-[#24243e] 
+    text-gray-900 dark:text-gray-100 antialiased;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.container {
+  @apply max-w-6xl mx-auto px-5;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold shadow-lg transition-transform;
+  background: var(--brand-gradient);
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  @apply rounded-2xl p-6 shadow-lg backdrop-blur bg-white/70 dark:bg-white/5 border border-gray-200/30 dark:border-white/10;
+}
+/* Neon animated background */
