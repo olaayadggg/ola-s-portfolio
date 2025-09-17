@@ -140,15 +140,17 @@ export default function ProjectDetails() {
                 {/* Timeline Dot */}
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
-                  // @ts-ignore
-                  whileInView={(entry) => {
-                    if (entry?.isIntersecting) {
-                      setIsInView(true); // Trigger typewriter when this block is in view
-                    } else {
-                      setIsInView(false); // Reset if it scrolls out of view (optional, but good for re-scrolling)
-                    }
-                    return { opacity: 1, y: 0 };
-                  }}
+                  // whileInView={(entry) => {
+                  //   if (entry?.isIntersecting) {
+                  //     setIsInView(true); // Trigger typewriter when this block is in view
+                  //   } else {
+                  //     setIsInView(false); // Reset if it scrolls out of view (optional, but good for re-scrolling)
+                  //   }
+                  //   return { opacity: 1, y: 0 };
+                  // }}
+                  whileInView={{ opacity: 1, y: 0 }} // ✅ only animation object here
+                  onViewportEnter={() => setIsInView(true)} // ✅ detect when in view
+                  onViewportLeave={() => setIsInView(false)} // optional reset
                   transition={{ duration: 0.8 }}
                   viewport={{ once: true, amount: 0.4 }} // Trigger when 40% of block is in view
                   className={`flex flex-col md:flex-row items-center gap-10 lg:gap-20`}
