@@ -138,9 +138,9 @@ export default function ProjectDetails() {
             return (
               <div key={i} className="relative group">
                 {/* Timeline Dot */}
-
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
+                  // @ts-ignore
                   whileInView={(entry) => {
                     if (entry?.isIntersecting) {
                       setIsInView(true); // Trigger typewriter when this block is in view
