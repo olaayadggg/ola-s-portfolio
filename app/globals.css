@@ -1,3 +1,4 @@
+/* Add to your globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +7,10 @@
 
 :root {
   --brand-gradient: linear-gradient(135deg, #a855f7, #06b6d4, #ec4899);
+  --light-color-1: rgba(236, 72, 153, 0.4);
+  --light-color-2: rgba(139, 92, 246, 0.1);
+  --light-glow-color-1: rgba(236, 72, 153, 0.6);
+  --light-glow-color-2: rgba(139, 92, 246, 0.3);
 }
 
 html {
@@ -16,6 +21,8 @@ body {
   @apply bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-[#0f0c29] dark:via-[#302b63] dark:to-[#24243e] 
     text-gray-900 dark:text-gray-100 antialiased;
   font-family: 'Poppins', sans-serif;
+  position: relative; /* Essential for containing the background */
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4 {
@@ -39,4 +46,152 @@ h1, h2, h3, h4 {
 .card {
   @apply rounded-2xl p-6 shadow-lg backdrop-blur bg-white/70 dark:bg-white/5 border border-gray-200/30 dark:border-white/10;
 }
-/* Neon animated background */
+/* Add to your globals.css */
+
+/* --- General Styles (already mostly in your code) --- */
+/* Your existing body, h1, etc. styles... */
+body {
+    /* Make sure the body is positioned to contain the background */
+    position: relative; 
+    min-height: 100vh;
+}
+
+/* --- Background Layers --- */
+.gradient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind all content */
+    overflow: hidden;
+}
+
+.gradient-sphere {
+    position: absolute;
+    border-radius: 50%;
+    /* Increased blur for a softer effect */
+    filter: blur(80px); /* Increased from 60px */
+    will-change: transform;
+}
+
+.sphere-1 {
+    width: 40vw;
+    height: 40vw;
+    /* Softened colors and increased transparency */
+    background: linear-gradient(40deg, rgba(255, 105, 180, 0.5), rgba(255, 160, 122, 0.2)); /* Lighter pinks/oranges */
+    top: -10%;
+    left: -10%;
+    animation: float-1 15s ease-in-out infinite alternate;
+}
+
+.sphere-2 {
+    width: 45vw;
+    height: 45vw;
+    /* Softened colors and increased transparency */
+    background: linear-gradient(240deg, rgba(147, 112, 219, 0.5), rgba(135, 206, 250, 0.2)); /* Lighter purples/blues */
+    bottom: -20%;
+    right: -10%;
+    animation: float-2 18s ease-in-out infinite alternate;
+}
+
+.sphere-3 {
+    width: 30vw;
+    height: 30vw;
+    /* Softened colors and increased transparency */
+    background: linear-gradient(120deg, rgba(173, 216, 230, 0.4), rgba(144, 238, 144, 0.1)); /* Lighter blues/greens */
+    top: 60%;
+    left: 20%;
+    animation: float-3 20s ease-in-out infinite alternate;
+}
+
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: 5;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), /* Reduced opacity */
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); /* Reduced opacity */
+    z-index: 2;
+}
+
+.glow {
+    position: absolute;
+    width: 40vw;
+    height: 40vh;
+    /* Softened glow color and increased transparency */
+    background: radial-gradient(circle, rgba(123, 104, 238, 0.1), transparent 70%); /* Lighter purple glow */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: pulse 8s infinite alternate;
+    filter: blur(40px); /* Increased blur */
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%); /* Center particles on their position */
+}
+
+/* --- Animations --- */
+@keyframes float-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(10%, 10%) scale(1.1); }
+}
+
+@keyframes float-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-10%, -5%) scale(1.15); }
+}
+
+@keyframes float-3 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+    100% { transform: translate(-5%, 10%) scale(1.05); opacity: 0.6; }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.2; transform: translate(-50%, -50%) scale(0.9); } /* Reduced initial opacity */
+    100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.1); } /* Reduced max opacity */
+}
+
+.text-4xl{
+  line-height: normal !important;
+}
+.text-5xl{
+  line-height: normal !important;
+}
+@media (min-width: 768px) {
+    .md\:text-6xl {
+        font-size: 3.75rem;
+        line-height: 1.5 !important;
+    }
+  }

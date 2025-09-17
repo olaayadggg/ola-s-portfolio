@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NeonBackground from "../public/vectors/NeonBackground";
+import DynamicGradientBackground from "../components/DynamicBackground";
 
 export const metadata = {
   title: "Ola Ayad • Front-End Developer",
@@ -18,10 +19,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <NeonBackground />
-          <Navbar />
-          <main className="container py-10">{children}</main>
-          <Footer />
+          {/* <NeonBackground /> */}
+          <DynamicGradientBackground />
+          <div className="relative z-10 min-h-screen flex flex-col">
+            <Navbar />
+            <main className="container flex-grow py-10">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

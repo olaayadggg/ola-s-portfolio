@@ -5,8 +5,6 @@ import About from "../components/About";
 import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
-import Timeline from "../components/quiz";
-import ScrollArrow from "../public/vectors/ScrollArrow";
 import Services from "../components/Services";
 
 export default function Page() {
@@ -29,7 +27,7 @@ export default function Page() {
       >
         <About />
       </motion.section>
-       <motion.section
+      <motion.section
         id="services"
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +36,6 @@ export default function Page() {
       >
         <Services />
       </motion.section>
-      <ScrollArrow/>
       <motion.section
         id="projects"
         initial={{ opacity: 0, y: 12 }}

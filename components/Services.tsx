@@ -50,7 +50,7 @@ export default function Services() {
               glareColor="#ec4899"
               tiltMaxAngleX={15}
               tiltMaxAngleY={15}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all"
+              className="bg-white/80 dark:bg-white/5 rounded-2xl p-5 shadow-xl h-full hover:shadow-2xl transition-all"
             >
               <div className="flex flex-col items-center text-center space-y-4">
                 {s.icon}

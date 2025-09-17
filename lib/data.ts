@@ -61,6 +61,26 @@ export const profile = {
       // repo: "https://github.com/your-username/calendar",
       demo: "https://devjets.io/",
       image: "/devjets.png",
+      story: [
+        {
+          image: "/devjets.png",
+          title: "The Hero Section",
+          description:
+            "An animated hero with typewriter effect and smooth neon background.",
+        },
+        {
+          image: "/devjets.png",
+          title: "Projects Slider",
+          description:
+            "A 3D Swiper slider to showcase my projects interactively.",
+        },
+        {
+          image: "/devjets.png",
+          title: "Contact Form",
+          description:
+            "A Formik-powered contact form with EmailJS integration.",
+        },
+      ],
     },
     {
       id: 1,
@@ -71,6 +91,26 @@ export const profile = {
       // repo: "https://github.com/your-username/kanban",
       demo: "https://digitsole-gules.vercel.app/",
       image: "/digitsole.png",
+      story: [
+        {
+          image: "/digitsole.png",
+          title: "The Hero Section",
+          description:
+            "An animated hero with typewriter effect and smooth neon background.",
+        },
+        {
+          image: "/digitsole.png",
+          title: "Projects Slider",
+          description:
+            "A 3D Swiper slider to showcase my projects interactively.",
+        },
+        {
+          image: "/digitsole.png",
+          title: "Contact Form",
+          description:
+            "A Formik-powered contact form with EmailJS integration.",
+        },
+      ],
     },
     {
       id: 2,
@@ -81,6 +121,26 @@ export const profile = {
       repo: "https://github.com/your-username/ecommerce",
       demo: "https://ecommerce-demo.example.com",
       image: "/weconnect.png",
+      story: [
+        {
+          image: "/weconnect.png",
+          title: "The Hero Section",
+          description:
+            "An animated hero with typewriter effect and smooth neon background.",
+        },
+        {
+          image: "/weconnect.png",
+          title: "Projects Slider",
+          description:
+            "A 3D Swiper slider to showcase my projects interactively.",
+        },
+        {
+          image: "/weconnect.png",
+          title: "Contact Form",
+          description:
+            "A Formik-powered contact form with EmailJS integration.",
+        },
+      ],
     },
     {
       id: 3,
@@ -91,6 +151,26 @@ export const profile = {
       repo: "https://github.com/your-username/ecommerce",
       demo: "https://ecommerce-demo.example.com",
       image: "/zawaj.jpg",
+      story: [
+        {
+          image: "/zawaj.jpg",
+          title: "The Hero Section",
+          description:
+            "An animated hero with typewriter effect and smooth neon background.",
+        },
+        {
+          image: "/zawaj.jpg",
+          title: "Projects Slider",
+          description:
+            "A 3D Swiper slider to showcase my projects interactively.",
+        },
+        {
+          image: "/zawaj.jpg",
+          title: "Contact Form",
+          description:
+            "A Formik-powered contact form with EmailJS integration.",
+        },
+      ],
     },
   ],
 };
