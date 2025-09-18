@@ -70,16 +70,16 @@ body {
 .gradient-sphere {
     position: absolute;
     border-radius: 50%;
-    /* Increased blur for a softer effect */
-    filter: blur(80px); /* Increased from 60px */
+    /* Maintained a good blur for softness */
+    filter: blur(70px); /* Slightly less blur than last to give more definition */
     will-change: transform;
 }
 
 .sphere-1 {
     width: 40vw;
     height: 40vw;
-    /* Softened colors and increased transparency */
-    background: linear-gradient(40deg, rgba(255, 105, 180, 0.5), rgba(255, 160, 122, 0.2)); /* Lighter pinks/oranges */
+    /* Richer, but still soft pink/orange gradient */
+    background: linear-gradient(40deg, rgba(255, 105, 180, 0.6), rgba(255, 140, 0, 0.3)); 
     top: -10%;
     left: -10%;
     animation: float-1 15s ease-in-out infinite alternate;
@@ -88,8 +88,8 @@ body {
 .sphere-2 {
     width: 45vw;
     height: 45vw;
-    /* Softened colors and increased transparency */
-    background: linear-gradient(240deg, rgba(147, 112, 219, 0.5), rgba(135, 206, 250, 0.2)); /* Lighter purples/blues */
+    /* Richer, but still soft purple/blue gradient */
+    background: linear-gradient(240deg, rgba(138, 43, 226, 0.6), rgba(0, 191, 255, 0.3)); 
     bottom: -20%;
     right: -10%;
     animation: float-2 18s ease-in-out infinite alternate;
@@ -98,8 +98,8 @@ body {
 .sphere-3 {
     width: 30vw;
     height: 30vw;
-    /* Softened colors and increased transparency */
-    background: linear-gradient(120deg, rgba(173, 216, 230, 0.4), rgba(144, 238, 144, 0.1)); /* Lighter blues/greens */
+    /* Richer, but still soft blue/green gradient */
+    background: linear-gradient(120deg, rgba(64, 224, 208, 0.5), rgba(0, 255, 127, 0.2));
     top: 60%;
     left: 20%;
     animation: float-3 20s ease-in-out infinite alternate;
@@ -111,7 +111,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.05;
+    opacity: 0.05; /* Kept subtle */
     z-index: 5;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
@@ -124,8 +124,8 @@ body {
     height: 100%;
     background-size: 40px 40px;
     background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), /* Reduced opacity */
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); /* Reduced opacity */
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px), /* Slightly increased from 0.02 */
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
     z-index: 2;
 }
 
@@ -133,14 +133,14 @@ body {
     position: absolute;
     width: 40vw;
     height: 40vh;
-    /* Softened glow color and increased transparency */
-    background: radial-gradient(circle, rgba(123, 104, 238, 0.1), transparent 70%); /* Lighter purple glow */
+    /* A more noticeable, yet soft central glow */
+    background: radial-gradient(circle, rgba(123, 104, 238, 0.15), transparent 70%); /* Slightly more opaque purple glow */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     animation: pulse 8s infinite alternate;
-    filter: blur(40px); /* Increased blur */
+    filter: blur(35px); /* Adjusted blur */
 }
 
 .particles-container {
@@ -179,8 +179,8 @@ body {
 }
 
 @keyframes pulse {
-    0% { opacity: 0.2; transform: translate(-50%, -50%) scale(0.9); } /* Reduced initial opacity */
-    100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.1); } /* Reduced max opacity */
+    0% { opacity: 0.25; transform: translate(-50%, -50%) scale(0.9); } /* Slightly more visible initial opacity */
+    100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); } /* Slightly more visible max opacity */
 }
 
 .text-4xl{

@@ -102,7 +102,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur flex"
+            className="fixed inset-0 z-50 dark:bg-gray-900/60 rounded-2xl backdrop-blur flex"
             onClick={() => setMenuOpen(false)}
           >
             <motion.div
@@ -110,7 +110,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="ml-auto w-4/5 max-w-sm bg-black text-white p-8 shadow-2xl flex flex-col"
+              className="ml-auto w-4/5 max-w-sm dark:bg-gray-900/60 text-white p-8 shadow-2xl flex flex-col"
               onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
             >
               {/* Close button */}
@@ -139,24 +139,22 @@ export default function Navbar() {
                 ))}
               </nav>
 
-              <div className="mt-8 border-t border-white/20 pt-6 flex flex-col gap-4">
+              <div className="mt-8 border-t text-center border-white/20 pt-6 flex flex-col gap-4">
                 <a
                   href="/Ola ayad - front-end developer.pdf"
-                  download
-                  className="underline text-sm hover:text-pink-400"
                   onClick={() => setMenuOpen(false)}
+                  download
+                  className="rounded-full px-6 py-3 border text-sm border-pink-200 text-pink-600 hover:bg-pink-50 dark:hover:bg-white/10 transition"
                 >
-                  ⬇ Download Resume
+                  Resume
                 </a>
-
                 <a
                   href="/#contact"
-                  className="btn mt-2 text-center"
                   onClick={() => setMenuOpen(false)}
+                  className="btn text-sm text-center justify-center"
                 >
                   Hire me
                 </a>
-
                 <ThemeToggle />
               </div>
             </motion.div>

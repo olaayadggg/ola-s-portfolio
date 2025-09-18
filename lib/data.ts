@@ -5,11 +5,11 @@ export const profile = {
   summary:
     "Front-end developer focused on building clean, accessible interfaces with React/Next.js. Passionate about UX, performance, and maintainable architecture.",
   email: "olaayad222@gmail.com",
-  phone: "+20-155-4519-478",
+  phone: "+201554519478",
   links: {
-    github: "github.com/olaayadggg",
-    linkedin: "linkedin.com/in/ola-ayad/",
-    portfolio: "https://your-portfolio.com",
+    github: "https://github.com/olaayadggg",
+    linkedin: "https://linkedin.com/in/ola-ayad/",
+    portfolio: "https://ola-s-portfolio-two.vercel.app/",
   },
   skills: [
     "React",
