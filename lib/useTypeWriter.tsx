@@ -17,15 +17,25 @@
 //   return displayed;
 // }
 // A new, standalone `useTypewriter` hook
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export const useTypewriter = (text: string, active: boolean) => {
   const [typedText, setTypedText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const hasStartedRef = useRef(false);
 
   useEffect(() => {
-    if (!active || isTyping) return;
+    if (!active) {
+      setTypedText("");
+      setIsTyping(false);
+      hasStartedRef.current = false;
+      return;
+    }
+
+    if (hasStartedRef.current) return; // Don't restart if already completed
+    
     setIsTyping(true);
+    hasStartedRef.current = true;
 
     let i = 0;
     const typingInterval = setInterval(() => {
@@ -34,13 +44,12 @@ export const useTypewriter = (text: string, active: boolean) => {
         i++;
       } else {
         clearInterval(typingInterval);
-        setIsTyping(false); // Reset for potential re-typing on re-render if needed
+        setIsTyping(false);
       }
     }, 50); // Adjust typing speed here
 
     return () => {
       clearInterval(typingInterval);
-      setTypedText(''); // Clear text when element unmounts or becomes inactive
     };
   }, [text, active]);
 

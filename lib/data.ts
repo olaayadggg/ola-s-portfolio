@@ -34,9 +34,9 @@ export const profile = {
       role: "Part time Front-End Developer",
       period: "2025 — Present",
       points: [
-        "Built and shipped responsive, accessible features in React/Next.js.",
-        "Collaborated with designers to create a consistent component system.",
-        "Improved performance and Lighthouse scores across key pages.",
+        "Designed and implemented scalable, responsive web application for Devjets’ product suite using Next.js, ensuring performance and maintainability.",
+        "Improved UI/UX and front-end optimization, reducing page load times by up to 40% and enhancing accessibility, which increased user engagement and retention.",
+        "Collaborated with cross-functional teams to deliver feature-rich, customer-centric solutions, leveraging AI-driven development workflows to accelerate releases and improve code quality.",
       ],
     },
     {
@@ -44,8 +44,10 @@ export const profile = {
       role: "Full time Front-End Developer",
       period: "2024 — 2025",
       points: [
-        "Developed landing pages and interactive components with HTML, CSS, and JavaScript.",
+        "Developed dynamic, responsive, and user-centric web applications using Angular, React.js, and Next.js.",
+        "Built efficient front-end architectures and optimized UI performance for seamless user experiences.",
         "Integrated REST APIs and improved UI/UX for multiple client projects.",
+        "Collaborated with cross-functional teams to deliver scalable solutions, enhancing user experience and interface usability.",
         "Learned best practices for Git, agile teamwork, and code reviews.",
       ],
     },
@@ -57,7 +59,17 @@ export const profile = {
       title: "Devjets app",
       description:
         "A full-featured calendar with drag-and-drop events, recurring rules, and timezone awareness.",
-      tech: ["Next.js", "TypeScript", "Tailwind", "Formik", "React Query"],
+      tech: [
+        "Next.js",
+        "Tailwind CSS",
+        "Redux toolkit",
+        "RTK",
+        "Unleash",
+        "i18n",
+        "Infisical",
+        "Google Analytics",
+        "Hotjar",
+      ],
       // repo: "https://github.com/your-username/calendar",
       demo: "https://devjets.io/",
       image: "/devjets.png",
@@ -86,29 +98,36 @@ export const profile = {
       id: 1,
       title: "Digitsole dashboard",
       description:
-        "Trello-like board with drag-and-drop, optimistic updates, and keyboard navigation.",
-      tech: ["Next.js", "Zustand", "Tailwind"],
+        "A simulation to a smart Gait & Body Analytics Dashboard that helps users seamlessly track activity, monitor performance, and gain personalized insights through intuitive dashboards and interactive features.",
+      tech: ["Next.js", "Context api", "Tailwind", "Supabase"],
       // repo: "https://github.com/your-username/kanban",
       demo: "https://digitsole-gules.vercel.app/",
       image: "/digitsole.png",
       story: [
         {
-          image: "/digitsole.png",
-          title: "The Hero Section",
-          description:
-            "An animated hero with typewriter effect and smooth neon background.",
+          image: "/digitsole/digitsole1.png",
+          title: "Authentication",
+          description: "A fully frontend authentication using Supabase",
         },
         {
-          image: "/digitsole.png",
-          title: "Projects Slider",
-          description:
-            "A 3D Swiper slider to showcase my projects interactively.",
+          image: "/digitsole/digitsole2.png",
+          title: "Enter your info",
+          description: "Enter 3 basic info to start making the matching logic",
         },
         {
-          image: "/digitsole.png",
-          title: "Contact Form",
-          description:
-            "A Formik-powered contact form with EmailJS integration.",
+          image: "/digitsole/digitsole3.png",
+          title: "Start analizing",
+          description: "Display your matching results on an interactive charts",
+        },
+        {
+          image: "/digitsole/digitsole4.png",
+          title: "Equipment",
+          description: "A little information about the device equipment",
+        },
+        {
+          image: "/digitsole/digitsole5.png",
+          title: "A simple demo",
+          description: "A simple demo to tell users about the app",
         },
       ],
     },
@@ -116,10 +135,10 @@ export const profile = {
       id: 2,
       title: "Weconnect",
       description:
-        "Product catalogue, filters, cart state, and mock checkout with Stripe test mode.",
-      tech: ["Next.js", "Redux Toolkit", "Tailwind"],
-      repo: "https://github.com/your-username/ecommerce",
-      demo: "https://ecommerce-demo.example.com",
+        "An employee management app with task tracking, dashboards, and job scheduling.",
+      tech: ["Next.js", "Redux Toolkit", "Tailwind css", "React Query"],
+      repo: "",
+      demo: "",
       image: "/weconnect.png",
       story: [
         {
@@ -146,10 +165,10 @@ export const profile = {
       id: 3,
       title: "Zawaj 48",
       description:
-        "Product catalogue, filters, cart state, and mock checkout with Stripe test mode.",
-      tech: ["Next.js", "Redux Toolkit", "Tailwind"],
-      repo: "https://github.com/your-username/ecommerce",
-      demo: "https://ecommerce-demo.example.com",
+        "A full featured admin dashboard for Zawaj 48 application that manages users and subscriptions. including filters and ",
+      tech: ["Angular", "Bootstrap 5", "Scss"],
+      // repo: "https://github.com/your-username/ecommerce",
+      // demo: "https://ecommerce-demo.example.com",
       image: "/zawaj.jpg",
       story: [
         {

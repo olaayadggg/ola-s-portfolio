@@ -69,7 +69,7 @@ export default function Navbar() {
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-3 relative">
           <a
-            href="/Ola ayad - front-end developer.pdf"
+            href="/Ola ayad - Frontend developer.pdf"
             download
             className="rounded-full px-6 py-3 border text-sm border-pink-200 text-pink-600 hover:bg-pink-50 dark:hover:bg-white/10 transition"
           >
@@ -141,7 +141,7 @@ export default function Navbar() {
 
               <div className="mt-8 border-t text-center border-white/20 pt-6 flex flex-col gap-4">
                 <a
-                  href="/Ola ayad - front-end developer.pdf"
+                  href="/Ola ayad - Frontend developer.pdf"
                   onClick={() => setMenuOpen(false)}
                   download
                   className="rounded-full px-6 py-3 border text-sm border-pink-200 text-pink-600 hover:bg-pink-50 dark:hover:bg-white/10 transition"

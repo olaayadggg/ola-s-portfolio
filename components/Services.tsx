@@ -1,41 +1,67 @@
 "use client";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { FaCode, FaPaintBrush, FaMobileAlt } from "react-icons/fa";
+import { FaCode, FaReact, FaMobileAlt, FaPalette, FaRocket, FaCogs } from "react-icons/fa";
 
 const services = [
   {
-    title: "Web Development",
-    icon: <FaCode className="text-5xl text-pink-500" />,
-    desc: "Building responsive, fast, and modern web apps using React, Next.js, and cutting-edge tools.",
+    title: "Frontend Development",
+    icon: <FaReact className="text-5xl text-pink-500" />,
+    desc: "Building modern, responsive web applications using React, Next.js, TypeScript, and Tailwind CSS for optimal performance and user experience.",
   },
   {
-    title: "UI / UX Design",
-    icon: <FaPaintBrush className="text-5xl text-purple-500" />,
-    desc: "Designing sleek, user-friendly interfaces with a focus on usability and visual appeal.",
+    title: "UI/UX Implementation",
+    icon: <FaPalette className="text-5xl text-purple-500" />,
+    desc: "Translating designs into pixel-perfect, interactive interfaces with smooth animations and intuitive user interactions.",
   },
   {
-    title: "Mobile-Ready",
+    title: "Responsive Design",
     icon: <FaMobileAlt className="text-5xl text-fuchsia-500" />,
-    desc: "Ensuring seamless experiences across all devices with mobile-first designs.",
+    desc: "Creating mobile-first, responsive layouts that work seamlessly across all devices and screen sizes.",
+  },
+  {
+    title: "Performance Optimization",
+    icon: <FaRocket className="text-5xl text-blue-500" />,
+    desc: "Optimizing web applications for speed, accessibility, and SEO to deliver exceptional user experiences.",
+  },
+  {
+    title: "Component Architecture",
+    icon: <FaCogs className="text-5xl text-green-500" />,
+    desc: "Building reusable, maintainable component libraries and implementing clean, scalable code architecture.",
+  },
+  {
+    title: "State Management",
+    icon: <FaCode className="text-5xl text-orange-500" />,
+    desc: "Implementing efficient state management solutions with Redux, Zustand, and React Query for complex applications.",
   },
 ];
 
 export default function Services() {
   return (
     <section id="services" className="py-20">
-      <h2
-        className="text-3xl font-bold text-center mb-12"
-        style={{
-          backgroundImage: "var(--brand-gradient)",
-          WebkitBackgroundClip: "text",
-          color: "transparent",
-        }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
       >
-        My Services
-      </h2>
+        <h2
+          className="text-3xl font-bold mb-4"
+          style={{
+            backgroundImage: "var(--brand-gradient)",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          My Services
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Specializing in modern front-end development with a focus on creating exceptional user experiences through cutting-edge technologies and best practices.
+        </p>
+      </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
         {services.map((s, i) => (
           <motion.div
             key={s.title}

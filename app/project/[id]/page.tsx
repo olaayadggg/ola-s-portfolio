@@ -20,7 +20,6 @@ import {
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Image from "next/image";
 import TypewriterText from "../../../components/typewriter";
-import { Typewriter } from "react-simple-typewriter";
 
 const techIcons: Record<string, JSX.Element> = {
   React: <FaReact className="text-sky-400 text-2xl" />,
@@ -195,18 +194,10 @@ export default function ProjectDetails() {
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
                       {/* Typewriter effect triggered by isInView */}
-                      {/* <TypewriterText
+                      <TypewriterText
                         text={step.description}
                         active={isInView}
-                      /> */}
-                      <Typewriter
-                        words={[step.description]}
-                        cursor
-                        cursorStyle="|"
-                        typeSpeed={80}
-                        delaySpeed={1500}
                       />
-                      {/* {isInView && <span className="animate-pulse">|</span>} */}
                     </p>
                   </div>
                 </motion.div>

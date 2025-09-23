@@ -46,23 +46,33 @@ export default function About() {
     { icon: <SiMysql className="text-blue-600" />, name: "MySQL" },
   ];
 
+  // Create multiple copies for seamless infinite scrolling
+  const duplicatedSkills = [
+    ...skillsIcons,
+    ...skillsIcons,
+    ...skillsIcons,
+    ...skillsIcons,
+    ...skillsIcons
+  ];
+
   return (
     <section id="about" className="relative w-full">
       <div className="w-full overflow-hidden py-2">
         <motion.div
           className="flex gap-10 text-5xl w-max"
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{ x: ["0%", "-33.333%"] }}
           transition={{
             ease: "linear",
-            duration: 25,
+            duration: 20,
             repeat: Infinity,
+            repeatType: "loop",
           }}
         >
-          {/* Repeat 2x to fill the screen and loop */}
-          {[...skillsIcons, ...skillsIcons, ...skillsIcons].map((skill, i) => (
+          {/* Use 5 copies for truly seamless infinite loop */}
+          {duplicatedSkills.map((skill, i) => (
             <div
               key={i}
-              className="cursor-pointer hover:scale-125 transition-transform"
+              className="cursor-pointer hover:scale-125 transition-transform duration-300 flex-shrink-0"
               title={skill.name}
             >
               {skill.icon}

@@ -81,11 +81,11 @@ const DynamicGradientBackground: React.FC = () => {
                 setTimeout(() => {
                     animateParticle(particle);
                 }, duration * 1000);
-            }, delay * 1000);
+            }, delay);
         };
 
         // Create initial particles
-        const particleCount = 80;
+        const particleCount = 60;
         for (let i = 0; i < particleCount; i++) {
             createParticle();
         }
@@ -133,7 +133,6 @@ const DynamicGradientBackground: React.FC = () => {
             <div className="gradient-sphere sphere-3"></div>
             <div className="glow"></div>
             <div className="grid-overlay"></div>
-            <div className="noise-overlay"></div>
             <div className="particles-container" ref={particlesContainerRef}></div>
         </div>
     );
