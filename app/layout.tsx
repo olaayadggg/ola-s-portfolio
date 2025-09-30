@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NeonBackground from "../public/vectors/NeonBackground";
 import DynamicGradientBackground from "../components/DynamicBackground";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Ola Ayad • Front-End Developer",
@@ -17,13 +18,6 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          defer
-          data-domain="ola.com"
-          src="https://plausible.io/js/script.js"
-        ></script>
-      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {/* <NeonBackground /> */}
@@ -31,6 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="relative z-10 min-h-screen flex flex-col">
             <Navbar />
             <main className="container flex-grow py-10">{children}</main>
+            <Analytics />
             <Footer />
           </div>
         </ThemeProvider>
