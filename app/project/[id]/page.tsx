@@ -10,24 +10,74 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { profile } from "../../../lib/data";
 import { useTypewriter } from "../../../lib/useTypeWriter"; // Assuming this is now adjusted to accept a trigger
-import { FaReact, FaNodeJs } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaBootstrap,
+  FaCss3Alt,
+  FaHtml5,
+  FaHotjar,
+} from "react-icons/fa";
 import {
   SiNextdotjs,
   SiMongodb,
   SiTailwindcss,
   SiVercel,
+  SiRedux,
+  SiFormik,
+  SiAngular,
+  SiI18Next,
+  SiGoogleanalytics,
+  SiSupabase,
+  SiSass,
 } from "react-icons/si";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Image from "next/image";
 import TypewriterText from "../../../components/typewriter";
 
+// const techIcons: Record<string, JSX.Element> = {
+//   React: <FaReact className="text-sky-400 text-2xl" />,
+//   "Next.js": <SiNextdotjs className="text-black dark:text-white" />,
+//   Angular: <SiAngular className="text-red-600" />,
+//   "Tailwind CSS": <SiTailwindcss className="text-cyan-400 text-2xl" />,
+//   Vercel: <SiVercel className="text-black dark:text-white text-2xl" />,
+//   "Redux toolkit": <SiRedux className="text-purple-700" />,
+//   Formik: <SiFormik className="text-pink-500" />,
+//   "Bootstrap 5": <FaBootstrap className="text-purple-600" />,
+//   Css3: <FaCss3Alt className="text-blue-500" />,
+//   Html5: <FaHtml5 className="text-orange-500" />,
+//   i18n: <SiI18Next />,
+//   "Google Analytics": <SiGoogleanalytics />,
+//   Hotjar: <FaHotjar />,
+//   Scss: <FaCss3Alt />,
+//   Supabase: <SiSupabase />,
+//   "Context api": <></>,
+//   infisical: <></>,
+//   Unleash: <></>,
+//   RTK: <></>
+// };
+
 const techIcons: Record<string, JSX.Element> = {
   React: <FaReact className="text-sky-400 text-2xl" />,
   "Next.js": <SiNextdotjs className="text-black dark:text-white text-2xl" />,
-  Node: <FaNodeJs className="text-green-500 text-2xl" />,
-  MongoDB: <SiMongodb className="text-green-600 text-2xl" />,
-  "Tailwind CSS": <SiTailwindcss className="text-cyan-400 text-2xl" />,
-  Vercel: <SiVercel className="text-black dark:text-white text-2xl" />,
+  Angular: <SiAngular className="text-red-600 text-2xl" />,
+  "Tailwind CSS": <SiTailwindcss className="text-cyan-400" />,
+  Vercel: <SiVercel className="text-black dark:text-white" />,
+  "Redux toolkit": <SiRedux className="text-purple-700" />,
+  Formik: <SiFormik className="text-pink-500 text-2xl" />,
+  "Bootstrap 5": <FaBootstrap className="text-purple-600" />,
+  CSS3: <FaCss3Alt className="text-blue-500" />,
+  HTML5: <FaHtml5 className="text-orange-500" />,
+  i18n: <SiI18Next className="text-blue-400" />,
+  "Google Analytics": <SiGoogleanalytics className="text-orange-600" />,
+  Hotjar: <FaHotjar className="text-red-500" />,
+  SCSS: <SiSass className="text-pink-400 " />,
+  Supabase: <SiSupabase className="text-green-500 " />,
+  "Context api": <FaReact className="text-sky-400 " />, // fallback to React logo
+  // Infisical: (
+  //   <SiInfisical className="text-indigo-500 text-2xl" /> // custom, if available
+  // ),
+  // Unleash: <SiUnleash className="text-green-600 text-2xl" />, // custom, if available
 };
 
 export default function ProjectDetails() {
@@ -89,11 +139,9 @@ export default function ProjectDetails() {
           {project.tech.map((t, i) => (
             <div
               key={i}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-white/5 shadow-lg hover:scale-105"
             >
-              {techIcons[t] || (
-                <span className="text-gray-800 dark:text-gray-200">{t}</span>
-              )}
+              {techIcons[t]}
               <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
                 {t}
               </span>

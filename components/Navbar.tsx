@@ -1,7 +1,175 @@
+// "use client";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { useState, useEffect } from "react";
+// import ThemeToggle from "./ThemeToggle";
+
+// const nav = [
+//   { href: "/#about", label: "About" },
+//   { href: "/#projects", label: "Projects" },
+//   { href: "/#experience", label: "Experience" },
+//   { href: "/#contact", label: "Contact" },
+// ];
+
+// export default function Navbar() {
+//   const [scrolled, setScrolled] = useState(false);
+//   const [menuOpen, setMenuOpen] = useState(false);
+
+//   // Track scroll for background
+//   useEffect(() => {
+//     const onScroll = () => setScrolled(window.scrollY > 20);
+//     window.addEventListener("scroll", onScroll);
+//     onScroll();
+//     return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
+
+//   // Body scroll lock when mobile menu is open
+//   useEffect(() => {
+//     document.body.style.overflow = menuOpen ? "hidden" : "";
+//     return () => {
+//       document.body.style.overflow = "";
+//     };
+//   }, [menuOpen]);
+
+//   return (
+//     <header
+//       className={`sticky top-0 left-0 right-0 z-50 transition-all ${
+//         scrolled || menuOpen
+//           ? "backdrop-blur bg-white/70 dark:bg-gray-900/60 shadow-sm"
+//           : "bg-transparent"
+//       }`}
+//     >
+//       <div className="container flex items-center justify-between py-4">
+//         {/* Logo */}
+//         <motion.a
+//           href="/"
+//           className="font-bold text-2xl bg-clip-text text-transparent"
+//           initial={{ opacity: 0, y: -8 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           style={{ backgroundImage: "var(--brand-gradient)" }}
+//         >
+//           Ola<span className="opacity-80">.</span>
+//         </motion.a>
+
+//         {/* Desktop Navigation */}
+//         <nav className="hidden md:flex items-center gap-8">
+//           {nav.map((item, i) => (
+//             <motion.a
+//               key={item.href}
+//               href={item.href}
+//               className="text-sm hover:text-pink-500 transition-colors"
+//               initial={{ opacity: 0, y: -8 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ delay: 0.05 * i }}
+//             >
+//               {item.label}
+//             </motion.a>
+//           ))}
+//         </nav>
+
+//         {/* Desktop Actions */}
+//         <div className="hidden md:flex items-center gap-3 relative">
+//           <a
+//             href="/Ola ayad - Frontend developer.pdf"
+//             download
+//             className="rounded-full px-6 py-3 border text-sm border-pink-200 text-pink-600 hover:bg-pink-50 dark:hover:bg-white/10 transition"
+//           >
+//             Resume
+//           </a>
+//           <a href="/#contact" className="btn text-sm">
+//             Hire me
+//           </a>
+//           <ThemeToggle />
+//         </div>
+
+//         {/* Mobile Hamburger */}
+//         <button
+//           aria-label={menuOpen ? "Close menu" : "Open menu"}
+//           aria-expanded={menuOpen}
+//           aria-controls="mobile-menu"
+//           className="md:hidden text-2xl focus:outline-none"
+//           onClick={() => setMenuOpen((v) => !v)}
+//         >
+//           {menuOpen ? "✖" : "☰"}
+//         </button>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       <AnimatePresence>
+//         {menuOpen && (
+//           <motion.div
+//             id="mobile-menu"
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             exit={{ opacity: 0 }}
+//             transition={{ duration: 0.2 }}
+//             className="fixed inset-0 z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur flex"
+//             onClick={() => setMenuOpen(false)}
+//           >
+//             <motion.div
+//               initial={{ x: "100%" }}
+//               animate={{ x: 0 }}
+//               exit={{ x: "100%" }}
+//               transition={{ duration: 0.3, ease: "easeInOut" }}
+//               className="ml-auto w-4/5 max-w-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-8 shadow-2xl flex flex-col"
+//               onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+//             >
+//               {/* Close button */}
+//               <button
+//                 aria-label="Close menu"
+//                 className="self-end text-2xl mb-6 focus:outline-none"
+//                 onClick={() => setMenuOpen(false)}
+//               >
+//                 ✖
+//               </button>
+
+//               {/* Links */}
+//               <nav className="flex flex-col gap-6">
+//                 {nav.map((item, i) => (
+//                   <motion.a
+//                     key={item.href}
+//                     href={item.href}
+//                     className="text-lg font-medium hover:text-pink-400"
+//                     initial={{ opacity: 0, x: 20 }}
+//                     animate={{ opacity: 1, x: 0 }}
+//                     transition={{ delay: 0.08 * i }}
+//                     onClick={() => setMenuOpen(false)}
+//                   >
+//                     {item.label}
+//                   </motion.a>
+//                 ))}
+//               </nav>
+
+//               <div className="mt-8 border-t text-center border-white/20 pt-6 flex flex-col gap-4">
+//                 <a
+//                   href="/Ola ayad - Frontend developer.pdf"
+//                   onClick={() => setMenuOpen(false)}
+//                   download
+//                   className="rounded-full px-6 py-3 border text-sm border-pink-200 text-pink-600 hover:bg-pink-50 dark:hover:bg-white/10 transition"
+//                 >
+//                   Resume
+//                 </a>
+//                 <a
+//                   href="/#contact"
+//                   onClick={() => setMenuOpen(false)}
+//                   className="btn text-sm text-center justify-center"
+//                 >
+//                   Hire me
+//                 </a>
+//                 <ThemeToggle />
+//               </div>
+//             </motion.div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </header>
+//   );
+// }
+
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
 
 const nav = [
   { href: "/#about", label: "About" },
@@ -14,7 +182,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Track scroll for background
+  // Track scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -22,62 +190,58 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Body scroll lock when mobile menu is open
+  // Body scroll lock when mobile menu open
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
       document.body.style.overflow = "";
-    };
+    }
   }, [menuOpen]);
 
   return (
     <header
       className={`sticky top-0 left-0 right-0 z-50 transition-all ${
-        scrolled
-          ? "backdrop-blur bg-white/60 dark:bg-gray-900/60 shadow-sm"
+        scrolled || menuOpen
+          ? "backdrop-blur bg-white/70 dark:bg-gray-900/70 shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="container flex items-center justify-between py-4">
         {/* Logo */}
-        <motion.a
+        <Link
           href="/"
           className="font-bold text-2xl bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
           style={{ backgroundImage: "var(--brand-gradient)" }}
         >
           Ola<span className="opacity-80">.</span>
-        </motion.a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {nav.map((item, i) => (
-            <motion.a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm hover:text-pink-500 transition-colors"
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.05 * i }}
             >
               {item.label}
-            </motion.a>
+            </Link>
           ))}
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-3 relative">
+        <div className="hidden md:flex items-center gap-3">
           <a
             href="/Ola ayad - Frontend developer.pdf"
             download
-            className="rounded-full px-6 py-3 border text-sm border-pink-200 text-pink-600 hover:bg-pink-50 dark:hover:bg-white/10 transition"
+            className="btn-outline"
           >
             Resume
           </a>
-          <a href="/#contact" className="btn text-sm">
+          <Link href="/#contact" className="btn text-sm">
             Hire me
-          </a>
+          </Link>
           <ThemeToggle />
         </div>
 
@@ -97,23 +261,24 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            id="mobile-menu"
+            key="overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 dark:bg-gray-900/60 rounded-2xl backdrop-blur flex"
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
             onClick={() => setMenuOpen(false)}
           >
             <motion.div
+              key="panel"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="ml-auto w-4/5 max-w-sm dark:bg-gray-900/60 text-white p-8 shadow-2xl flex flex-col"
-              onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-8 shadow-2xl flex flex-col"
+              onClick={(e) => e.stopPropagation()}
             >
-              {/* Close button */}
+              {/* Close */}
               <button
                 aria-label="Close menu"
                 className="self-end text-2xl mb-6 focus:outline-none"
@@ -124,37 +289,35 @@ export default function Navbar() {
 
               {/* Links */}
               <nav className="flex flex-col gap-6">
-                {nav.map((item, i) => (
-                  <motion.a
+                {nav.map((item) => (
+                  <Link
                     key={item.href}
                     href={item.href}
                     className="text-lg font-medium hover:text-pink-400"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.08 * i }}
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.label}
-                  </motion.a>
+                  </Link>
                 ))}
               </nav>
 
-              <div className="mt-8 border-t text-center border-white/20 pt-6 flex flex-col gap-4">
+              {/* Actions */}
+              <div className="mt-8 border-t border-white/20 pt-6 flex flex-col gap-4">
                 <a
                   href="/Ola ayad - Frontend developer.pdf"
-                  onClick={() => setMenuOpen(false)}
                   download
-                  className="rounded-full px-6 py-3 border text-sm border-pink-200 text-pink-600 hover:bg-pink-50 dark:hover:bg-white/10 transition"
+                  onClick={() => setMenuOpen(false)}
+                  className="btn-outline"
                 >
                   Resume
                 </a>
-                <a
+                <Link
                   href="/#contact"
                   onClick={() => setMenuOpen(false)}
                   className="btn text-sm text-center justify-center"
                 >
                   Hire me
-                </a>
+                </Link>
                 <ThemeToggle />
               </div>
             </motion.div>

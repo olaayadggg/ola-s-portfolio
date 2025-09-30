@@ -133,10 +133,7 @@ export default function Projects() {
   const swiperRef = useRef<any>(null); // Ref to store Swiper instance
 
   // Create multiple copies of projects for seamless infinite scrolling
-  const duplicatedProjects = [
-    ...profile.projects,
-    ...profile.projects,
-  ];
+  const duplicatedProjects = [...profile.projects, ...profile.projects];
 
   return (
     <section id="projects" className="py-20">
@@ -158,12 +155,12 @@ export default function Projects() {
         centeredSlides={true}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ 
-          delay: 2500, 
+        autoplay={{
+          delay: 2500,
           disableOnInteraction: false,
           pauseOnMouseEnter: false,
           reverseDirection: false,
-          waitForTransition: true
+          waitForTransition: true,
         }}
         speed={800}
         effect="coverflow"
@@ -179,17 +176,17 @@ export default function Projects() {
           slideShadows: true,
         }}
         breakpoints={{
-          768: { 
-            slidesPerView: 2, 
+          768: {
+            slidesPerView: 2,
             loopAdditionalSlides: 3,
             spaceBetween: 30,
-            autoplay: { delay: 3000, disableOnInteraction: false }
+            autoplay: { delay: 3000, disableOnInteraction: false },
           },
-          1024: { 
-            slidesPerView: 3, 
+          1024: {
+            slidesPerView: 3,
             loopAdditionalSlides: 4,
             spaceBetween: 40,
-            autoplay: { delay: 3500, disableOnInteraction: false }
+            autoplay: { delay: 3500, disableOnInteraction: false },
           },
         }}
         className="max-w-7xl mx-auto"
@@ -204,7 +201,10 @@ export default function Projects() {
         }}
         onSlideChange={() => {
           // Ensure autoplay continues after slide changes
-          if (swiperRef.current?.autoplay && !swiperRef.current.autoplay.running) {
+          if (
+            swiperRef.current?.autoplay &&
+            !swiperRef.current.autoplay.running
+          ) {
             swiperRef.current.autoplay.start();
           }
         }}
@@ -217,7 +217,10 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.05 * (i % profile.projects.length) }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.05 * (i % profile.projects.length),
+                }}
                 className="block h-full w-full cursor-pointer"
                 // Add mouse event handlers here
                 onMouseEnter={() => {
@@ -250,7 +253,7 @@ export default function Projects() {
                   <div className="mt-5 flex flex-col justify-between flex-grow">
                     <div className="flex-grow">
                       <h3 className="font-semibold text-lg mb-2">{p.title}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-3 leading-relaxed line-clamp-3">
                         {p.description}
                       </p>
                     </div>

@@ -43,6 +43,18 @@ h1, h2, h3, h4 {
   transform: scale(1.05);
 }
 
+.btn-outline {
+  @apply inline-flex items-center gap-2 justify-center text-center rounded-full px-6 py-3 font-semibold shadow-lg transition-transform border;
+  border-color: rgb(244 114 182 / 0.5); /* Tailwind's pink-200 */
+  background: transparent;
+  color: rgb(219 39 119); /* Tailwind's pink-600 */
+}
+
+.btn-outline:hover {
+  transform: scale(1.05);
+  background-color: rgb(249 168 212 / 0.1); /* subtle pink hover bg */
+}
+
 .card {
   @apply rounded-2xl p-6 shadow-lg backdrop-blur bg-white/70 dark:bg-white/5 border border-gray-200/30 dark:border-white/10;
 }

@@ -50,7 +50,7 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              className="rounded-full px-6 py-3 border border-pink-200 text-pink-600"
+              className="btn-outline"
             >
               Contact
             </a>
